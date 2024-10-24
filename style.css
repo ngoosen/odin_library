@@ -37,8 +37,11 @@ ol {
 }
 
 li {
+  list-style-type: none;
+
   padding: 20px;
 
+  font-weight: bold;
   background-color: #ffffff;
 }
 
@@ -78,6 +81,18 @@ li button:active,
 #add_book_form_toggle:active,
 form button:active {
   transform: scale(.95);
+}
+
+.read_book {
+  color: #ffffff;
+  background-color: forestgreen;
+}
+
+.read_book button,
+.read_book button:hover,
+.read_book button:active {
+  color: #000000;
+  background-color: #ffffff;
 }
 
 #add_book_form_toggle {

@@ -16,11 +16,7 @@ function Book(title, author, pages) {
     return `<p>${this.title}</p><p>${this.author}</p><p>${pages} pages</p>`;
   };
   this.toggleRead = function () {
-    if (this.read) {
-      this.read = false;
-    } else {
-      this.read = true;
-    }
+    this.read = !this.read;
   }
 }
 
@@ -37,7 +33,7 @@ function showLibrary() {
     element.innerHTML = book.info();
 
     if (book.read) {
-      element.style.textDecoration = "line-through";
+      element.classList.add("read_book");
     }
 
     const buttonsDiv = document.createElement("div");
