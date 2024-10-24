@@ -84,7 +84,7 @@ showLibrary();
 const addBookFormToggleButton = document.getElementById("add_book_form_toggle");
 addBookFormToggleButton.addEventListener("click", () => {
   const form = document.getElementById("add_book_form");
-  form.style.display = "block";
+  form.style.display = "flex";
 });
 
 const addBookButton = document.getElementById("add_book");

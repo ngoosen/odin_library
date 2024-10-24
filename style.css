@@ -67,20 +67,99 @@ li button,
 }
 
 li button:hover,
-#add_book_form_toggle:hover {
+#add_book_form_toggle:hover,
+form button:hover {
   cursor: pointer;
   transform: scale(1.05);
   background-color: #af0f6a;
 }
 
 li button:active,
-#add_book_form_toggle:active {
+#add_book_form_toggle:active,
+form button:active {
   transform: scale(.95);
 }
 
 #add_book_form_toggle {
   font-size: 20px;
   background-color: #8b0f56;
+}
+
+#add_book_form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  /* ? Set in JS with add button toggle */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #ffffffa9;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 550px;
+
+  padding: 50px;
+
+  font-size: 20px;
+
+  color: #ffffff;
+  background-color: #8b0f56;
+}
+
+form label:hover {
+  cursor: pointer;
+}
+
+form input {
+  appearance: none;
+  border: none;
+
+  padding: 5px 10px;
+
+  font-size: 16px;
+
+  border-radius: 50px;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 15px;
+
+  font-size: 22px;
+
+  border-radius: 50px;
+
+  color: #8b0f56;
+  background-color: #ffffff;
+
+  transition: all .2s;
+}
+
+form button:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+form button:active {
+  color: #8b0f56;
+  background-color: #ffffff;
 }
 
 footer {
