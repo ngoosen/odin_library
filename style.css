@@ -11,6 +11,78 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px;
+}
+
+button {
+  appearance: none;
+  border: none;
+}
+
+ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 20px;
+
+  margin: 50px 100px;
+  padding: 30px;
+
+  background-color: #000000;
+}
+
+li {
+  padding: 20px;
+
+  background-color: #ffffff;
+}
+
+li > *:not(:first-child):not(:last-child) {
+  margin: 5px 0;
+}
+
+li > div {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+li button,
+#add_book_form_toggle {
+  padding: 10px 30px;
+
+  border-radius: 30px;
+
+  font-weight: bold;
+
+  color: #ffffff;
+  background-color: #000000;
+
+  transition: all .1s;
+}
+
+li button:hover,
+#add_book_form_toggle:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: #af0f6a;
+}
+
+li button:active,
+#add_book_form_toggle:active {
+  transform: scale(.95);
+}
+
+#add_book_form_toggle {
+  font-size: 20px;
+  background-color: #8b0f56;
+}
+
 footer {
   position: absolute;
   bottom: 0;

@@ -13,7 +13,7 @@ function Book(title, author, pages) {
   this.pages = pages;
   this.read = false;
   this.info = function () {
-    return `${this.title} by ${this.author}, ${pages} pages`;
+    return `<p>${this.title}</p><p>${this.author}</p><p>${pages} pages</p>`;
   };
   this.toggleRead = function () {
     if (this.read) {
@@ -34,11 +34,13 @@ function showLibrary() {
 
   myLibrary.forEach((book, index) => {
     const element = document.createElement("li");
-    element.textContent = book.info();
+    element.innerHTML = book.info();
 
     if (book.read) {
       element.style.textDecoration = "line-through";
     }
+
+    const buttonsDiv = document.createElement("div");
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
@@ -47,7 +49,7 @@ function showLibrary() {
       deleteBookFromLibrary(index);
     });
 
-    element.append(deleteButton);
+    buttonsDiv.append(deleteButton);
 
     const readToggleButton = document.createElement("button");
     readToggleButton.textContent = "Read";
@@ -57,8 +59,9 @@ function showLibrary() {
       showLibrary();
     });
 
-    element.append(readToggleButton);
+    buttonsDiv.append(readToggleButton);
 
+    element.append(buttonsDiv);
     list.append(element);
   });
 }
