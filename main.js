@@ -87,6 +87,12 @@ addBookFormToggleButton.addEventListener("click", () => {
   form.style.display = "flex";
 });
 
+const closeFormButton = document.getElementById("close_form_button");
+closeFormButton.addEventListener("click", () => {
+  const form = document.getElementById("add_book_form");
+  form.style.display = "none";
+});
+
 const addBookButton = document.getElementById("add_book");
 addBookButton.addEventListener("click", (e) => {
   e.preventDefault();

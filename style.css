@@ -102,6 +102,26 @@ form button:active {
   background-color: #ffffffa9;
 }
 
+#close_form_button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  padding: 20px;
+
+  font-size: 40px;
+
+  background-color: transparent;
+
+  transition: all .1s;
+}
+
+#close_form_button:hover {
+  cursor: pointer;
+  color: #af0f6a;
+  transform: scale(1.2);
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -112,6 +132,8 @@ form {
   padding: 50px;
 
   font-size: 20px;
+
+  border-radius: 10px;
 
   color: #ffffff;
   background-color: #8b0f56;
