@@ -14,14 +14,28 @@ function addBookToLibrary(book) {
 }
 
 function showLibrary() {
-  const div = document.getElementById("library");
-  div.innerHTML = "";
+  const list = document.getElementById("library");
+  list.innerHTML = "";
 
   myLibrary.forEach((book, index) => {
-    const element = document.createElement("p");
-    element.textContent = `${index + 1}. ${book.info()}`;
-    div.append(element);
+    const element = document.createElement("li");
+    element.textContent = book.info();
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", () => {
+      deleteBookFromLibrary(index);
+    });
+
+    element.append(deleteButton);
+    list.append(element);
   });
+}
+
+function deleteBookFromLibrary(id) {
+  myLibrary.splice(id, 1);
+  showLibrary();
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 259);
