@@ -4,9 +4,17 @@ function Book(title, author, pages) {
   this.title = title;
   this.author = author;
   this.pages = pages;
+  this.read = false;
   this.info = function () {
     return `${this.title} by ${this.author}, ${pages} pages`;
   };
+  this.toggleRead = function () {
+    if (this.read) {
+      this.read = false;
+    } else {
+      this.read = true;
+    }
+  }
 }
 
 function addBookToLibrary(book) {
@@ -21,6 +29,10 @@ function showLibrary() {
     const element = document.createElement("li");
     element.textContent = book.info();
 
+    if (book.read) {
+      element.style.textDecoration = "line-through";
+    }
+
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
 
@@ -29,6 +41,17 @@ function showLibrary() {
     });
 
     element.append(deleteButton);
+
+    const readToggleButton = document.createElement("button");
+    readToggleButton.textContent = "Read";
+
+    readToggleButton.addEventListener("click", () => {
+      book.toggleRead();
+      showLibrary();
+    });
+
+    element.append(readToggleButton);
+
     list.append(element);
   });
 }
