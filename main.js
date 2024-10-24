@@ -1,3 +1,10 @@
+function updateDate() {
+  const footerSpan = document.querySelector("footer span");
+  footerSpan.textContent = new Date().getFullYear();
+}
+
+updateDate();
+
 const myLibrary = [];
 
 function Book(title, author, pages) {
