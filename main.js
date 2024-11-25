@@ -7,15 +7,24 @@ updateDate();
 
 const myLibrary = [];
 
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = false;
-  this.info = function () {
-    return `<p>${this.title}</p><p>${this.author}</p><p>${pages} pages</p>`;
-  };
-  this.toggleRead = function () {
+class Book {
+  title;
+  author;
+  pages;
+  read;
+
+  constructor(title, author, pages) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = false;
+  }
+
+  info() {
+    return `<p>${this.title}</p><p>${this.author}</p><p>${this.pages} pages</p>`;
+  }
+
+  toggleRead() {
     this.read = !this.read;
   }
 }
